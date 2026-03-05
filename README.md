@@ -1,22 +1,32 @@
-# 🛍️ EShop — Authentication-Based E-Commerce Dashboard
+<div align="center">
 
-A fully responsive e-commerce web application built without a backend. Features authentication, session management, product browsing, cart management, dummy checkout with invoice, and profile editing — all powered by `localStorage` and the Fake Store API.
+# 🛍️ EShop
+
+### Authentication-Based E-Commerce Dashboard
+
+A fully responsive e-commerce web app — featuring auth, session management, product browsing, cart, checkout & invoicing — all without a backend.
+
+[![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-Visit_Site-F59E0B?style=for-the-badge)](https://ecommerce-dashboard-pig5.vercel.app/login)
+
+</div>
 
 ---
 
 ## 🚀 Tech Stack
 
-<p align="left">
-  <img src="https://img.shields.io/badge/React_19-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React" />
-  <img src="https://img.shields.io/badge/TypeScript_5-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
-  <img src="https://img.shields.io/badge/Vite_6-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite" />
-  <img src="https://img.shields.io/badge/Tailwind_CSS_v4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="Tailwind CSS" />
-  <img src="https://img.shields.io/badge/React_Router_v7-CA4245?style=for-the-badge&logo=react-router&logoColor=white" alt="React Router" />
-  <img src="https://img.shields.io/badge/Lucide_React-F56565?style=for-the-badge&logo=lucide&logoColor=white" alt="Lucide React" />
-</p>
+<div align="center">
 
-| Technology | Version | Purpose |
-|---|---|---|
+[![React](https://img.shields.io/badge/React_19-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://react.dev)
+[![TypeScript](https://img.shields.io/badge/TypeScript_5-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org)
+[![Vite](https://img.shields.io/badge/Vite_6-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_v4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
+[![React Router](https://img.shields.io/badge/React_Router_v7-CA4245?style=for-the-badge&logo=react-router&logoColor=white)](https://reactrouter.com)
+[![Lucide](https://img.shields.io/badge/Lucide_React-F97316?style=for-the-badge&logo=lucide&logoColor=white)](https://lucide.dev)
+
+</div>
+
+| Technology | Version | Role |
+|:---|:---:|:---|
 | **React** | 19 | UI framework |
 | **TypeScript** | 5 | Type safety |
 | **Vite** | 6 | Build tool & dev server |
@@ -29,19 +39,21 @@ A fully responsive e-commerce web application built without a backend. Features 
 
 ## ✨ Features
 
-- 🔐 **Register & Login** — `localStorage`-based auth with validation and duplicate-email detection
-- ⏱️ **Session Timer** — Auto-logout after 5 minutes with a live countdown in the navbar
-- 🏠 **Protected Routes** — All dashboard routes require an authenticated session
-- 📦 **Product Listing** — Responsive grid with loading skeletons and error handling via Fake Store API
-- 🛒 **Cart Management** — Add, remove, update quantities, per-user cart persisted to `localStorage`
-- 💳 **Dummy Checkout** — 3-step flow: Shipping Address → Payment Details → Invoice with unique Order ID
-- 👤 **User Profile** — View and edit name, email, and password
-- 📱 **Fully Responsive** — Optimised for mobile, tablet, and desktop
-- 🌑 **Dark Luxury Theme** — Slate/charcoal palette with amber gold accents
+| | Feature | Description |
+|:---:|:---|:---|
+| 🔐 | **Register & Login** | `localStorage`-based auth with validation and duplicate-email detection |
+| ⏱️ | **Session Timer** | Auto-logout after 5 minutes with a live countdown in the navbar |
+| 🏠 | **Protected Routes** | All dashboard routes require an authenticated session |
+| 📦 | **Product Listing** | Responsive grid with loading skeletons and error handling |
+| 🛒 | **Cart Management** | Add, remove, update quantities — cart persisted per user |
+| 💳 | **Dummy Checkout** | 3-step flow: Address → Payment → Invoice with unique Order ID |
+| 👤 | **User Profile** | View and edit name, email, and password |
+| 📱 | **Fully Responsive** | Optimised for mobile, tablet, and desktop |
+| 🌑 | **Dark Luxury Theme** | Slate/charcoal palette with amber gold accents |
 
 ---
 
-## 📁 Folder Structure
+## 📁 Project Structure
 
 ```
 src/
@@ -61,35 +73,23 @@ src/
 
 ---
 
-## ⚙️ Setup & Installation
+## ⚙️ Getting Started
 
-### Prerequisites
-
-- Node.js 18+
-- npm 9+
-
-### Getting Started
-
-**1. Clone the repository**
+> **Prerequisites:** Node.js 18+ and npm 9+
 
 ```bash
+# 1. Clone the repo
 git clone https://github.com/your-username/ecommerce-dashboard.git
 cd ecommerce-dashboard
-```
 
-**2. Install dependencies**
-
-```bash
+# 2. Install dependencies
 npm install
-```
 
-**3. Start the dev server**
-
-```bash
+# 3. Start the dev server
 npm run dev
 ```
 
-Open [http://localhost:5173](http://localhost:5173) in your browser.
+Then open [http://localhost:5173](http://localhost:5173) 🎉
 
 ---
 
@@ -97,91 +97,85 @@ Open [http://localhost:5173](http://localhost:5173) in your browser.
 
 Authentication is entirely client-side using `localStorage`.
 
-- **Register** — Stores users in a `users` array in `localStorage`. Prevents duplicate email addresses.
-- **Login** — Matches credentials against stored users, creates a session with a timestamp, and starts a 5-minute countdown timer.
-- **Session Management** — On page load, the app checks the elapsed time against the stored session start. If the session is still valid, the user is restored automatically; otherwise they are logged out.
-- **Protected Routes** — A `ProtectedRoute` wrapper redirects unauthenticated users to `/login`.
+> **Register →** Stores users in a `users` array. Prevents duplicate email addresses.
+>
+> **Login →** Matches credentials, creates a timestamped session, and starts a 5-minute countdown.
+>
+> **Session →** On page load, elapsed time is checked. Valid sessions restore the user automatically; expired ones log them out.
+>
+> **Protected Routes →** A `ProtectedRoute` wrapper redirects unauthenticated users to `/login`.
 
 ---
 
 ## 🛒 Cart Management
 
-Cart state is managed via `CartContext` and persisted to `localStorage` under a user-specific key, so each user maintains their own separate cart.
+Cart state lives in `CartContext` and is persisted to `localStorage` under a **user-specific key** — so every user maintains their own separate cart.
 
-Key behaviours:
-- Adding a product already in the cart increases its quantity instead of creating a duplicate entry.
-- Setting quantity to zero removes the item automatically.
-- Cart total, subtotal, and item count are derived from state on the fly.
+- Adding an existing product **increments its quantity** rather than duplicating it
+- Setting quantity to zero **removes the item** automatically
+- Total, subtotal, and item count are **derived from state** on the fly
 
 ---
 
 ## 💳 Checkout Flow
 
-The checkout is a 3-step wizard:
+```
+[ 1. Shipping Address ] ──► [ 2. Payment Details ] ──► [ 3. Invoice ]
+```
 
-1. **Shipping Address** — Collects full name, phone, street, city, state, ZIP, and country. All fields are required.
-2. **Payment Details** — Accepts any dummy 16-digit card number (auto-formatted as `0000 1111 2222 3333`). Expiry auto-inserts the `/` separator.
-3. **Invoice** — Displays a full order summary with a generated Order ID (e.g. `ORD-M2K4X9-AB3F`), itemised cart snapshot, 8% tax, and grand total.
+1. **Shipping Address** — Full name, phone, street, city, state, ZIP, country (all required)
+2. **Payment Details** — Any 16-digit dummy card, auto-formatted as `0000 1111 2222 3333`
+3. **Invoice** — Unique Order ID (e.g. `ORD-M2K4X9-AB3F`), itemised snapshot, 8% tax, grand total
 
-> The cart is cleared on order placement. The invoice uses a snapshot of cart contents so it remains populated after clearing.
+> The cart clears on order placement. The invoice uses a **snapshot** of cart contents captured before clearing, so it stays populated.
 
 ---
 
 ## 📦 Product Data
 
-Products are fetched from the [Fake Store API](https://fakestoreapi.com/products) via a `useProducts` custom hook. The hook manages loading, error, and refetch states. While loading, **8 skeleton cards** are displayed. On error, a retry button is shown.
+Products are fetched from the [Fake Store API](https://fakestoreapi.com/products) via a `useProducts` custom hook that handles loading, error, and refetch states.
 
----
-
-## 🗂️ Key Types
-
-The app uses shared TypeScript interfaces for `User`, `Product`, `CartItem`, `AuthContextType`, and `CartContextType`, all defined in `src/types/index.ts`.
+- **Loading** → 8 animated skeleton cards
+- **Error** → Retry button with error message
 
 ---
 
 ## 🚦 Routes
 
-| Path | Component | Protected |
-|---|---|---|
-| `/login` | Login | ❌ |
-| `/register` | Register | ❌ |
-| `/dashboard` | Dashboard | ✅ |
-| `/products` | Products | ✅ |
-| `/cart` | CartPage | ✅ |
-| `/checkout` | CheckoutPage | ✅ |
-| `/profile` | Profile | ✅ |
-
-All unmatched routes redirect to `/dashboard`.
+```
+/login          →  Login page         (public)
+/register       →  Register page      (public)
+/dashboard      →  Home dashboard     (protected)
+/products       →  Product listing    (protected)
+/cart           →  Shopping cart      (protected)
+/checkout       →  Checkout wizard    (protected)
+/profile        →  User profile       (protected)
+*               →  Redirect to /dashboard
+```
 
 ---
 
-## 🏗️ Build for Production
+## 🏗️ Build & Deploy
 
 ```bash
+# Production build
 npm run build
-```
 
-Output goes to `dist/`. Preview the production build locally:
-
-```bash
+# Preview build locally
 npm run preview
 ```
 
----
+### ▲ Deploy to Vercel
 
-## 🌐 Deploy
-
-### Vercel
-
-Connect your GitHub repo at [vercel.com](https://vercel.com) — Vite is auto-detected. Add a `vercel.json` at the root to ensure React Router handles page refreshes:
+Connect your GitHub repo at [vercel.com](https://vercel.com) — Vite is auto-detected. Add a `vercel.json` for SPA routing:
 
 ```json
 { "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }] }
 ```
 
-### Netlify
+### ◆ Deploy to Netlify
 
-Drag and drop the `dist/` folder at [netlify.com/drop](https://app.netlify.com/drop), or deploy via CLI. Add a `public/_redirects` file for client-side routing:
+Drag and drop the `dist/` folder at [netlify.com/drop](https://app.netlify.com/drop). Add `public/_redirects` for SPA routing:
 
 ```
 /*  /index.html  200
@@ -191,13 +185,25 @@ Drag and drop the `dist/` folder at [netlify.com/drop](https://app.netlify.com/d
 
 ## ⚠️ Known Limitations
 
-- No real backend — all data lives in `localStorage`
-- Passwords are stored in plain text (demo/interview purposes only)
-- Session resets on hard page refresh if the 5-minute window has already passed
-- Checkout is simulated — no real payment processing
+> This is a demo/interview project. Please be aware of the following:
+
+- 🗄️ No real backend — all data lives in `localStorage`
+- 🔑 Passwords stored in plain text (demo only — never do this in production)
+- ⏳ Session resets on hard refresh if the 5-minute window has passed
+- 💳 Checkout is simulated — no real payment processing occurs
 
 ---
 
 ## 📄 License
 
 Built as a React interview practical assignment.
+
+---
+
+<div align="center">
+
+Made with ❤️ using React + TypeScript + Vite
+
+[![Try It Live](https://img.shields.io/badge/Try_It_Live-ecommerce--dashboard-F59E0B?style=flat-square&logo=vercel&logoColor=white)](https://ecommerce-dashboard-pig5.vercel.app/login)
+
+</div>
